@@ -51,6 +51,11 @@ namespace KataCheckoutTests
 
         [Test]
         [TestCase("AB", 80)]
+        [TestCase("AC", 70)]
+        [TestCase("AD", 65)]
+        [TestCase("BC", 50)]
+        [TestCase("BD", 45)]
+        [TestCase("CD", 35)]
         public void GivenTwoItemsAddedToCheckout_ThenReturnCorrectPriceAsInt(string item, int expectedPrice)
         {
             //Act
