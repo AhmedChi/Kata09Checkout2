@@ -96,9 +96,52 @@ namespace KataCheckoutTests
         }
 
         [Test]
-        [TestCase("AAA", 130)]
         [TestCase("BB", 45)]
+        public void GivenTwoDuplicateItemsAddedToCheckout_ThenReturnCorrectDiscountedPriceAsInt(string item, int expectedPrice)
+        {
+            //Act
+            var actualPrice = checkout.Scan(item);
+
+            //Assert
+            Assert.AreEqual(expectedPrice, actualPrice);
+        }
+
+        [Test]
+        [TestCase("AAA", 130)]
         public void GivenThreeDuplicateItemsAddedToCheckout_ThenReturnCorrectPriceAsInt(string item, int expectedPrice)
+        {
+            //Act
+            var actualPrice = checkout.Scan(item);
+
+            //Assert
+            Assert.AreEqual(expectedPrice, actualPrice);
+        }
+
+        [Test]
+        [TestCase("AAAA", 180)]
+        public void GivenFourDuplicateItemsAddedToCheckout_ThenReturnCorrectDiscountedPriceAsInt(string item, int expectedPrice)
+        {
+            //Act
+            var actualPrice = checkout.Scan(item);
+
+            //Assert
+            Assert.AreEqual(expectedPrice, actualPrice);
+        }
+
+        [Test]
+        [TestCase("AAAAA", 230)]
+        public void GivenFiveDuplicateItemsAddedToCheckout_ThenReturnCorrectPriceAsInt(string item, int expectedPrice)
+        {
+            //Act
+            var actualPrice = checkout.Scan(item);
+
+            //Assert
+            Assert.AreEqual(expectedPrice, actualPrice);
+        }
+
+        [Test]
+        [TestCase("AAAAAA", 260)]
+        public void GivenSixDuplicateItemsAddedToCheckout_ThenReturnCorrectDiscountedPriceAsInt(string item, int expectedPrice)
         {
             //Act
             var actualPrice = checkout.Scan(item);

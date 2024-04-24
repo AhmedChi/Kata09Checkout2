@@ -32,17 +32,23 @@
 
         public int GetTotalPrice(char[] scannedItems)
         {
-            var totalValue = 0;
-            var totalDiscount = 0;
-            
 
-            totalValue = scannedItems
+            var totalValue = scannedItems
                         .Select(sku => _items.FirstOrDefault(item => item.SKU == sku))
                         .Sum(product => product.Price);
 
-            totalDiscount = _discounts
-                        .Where(discount => scannedItems.Count(sku => sku == discount.SKU) >= discount.QuantityAmount)
-                        .Sum(discount => discount.DiscountAmount);
+            var totalDiscount = _discounts
+                .Select(discount =>
+                {
+                    var itemCount = scannedItems.Count(sku => sku == discount.SKU);
+
+                    var discountApplications = itemCount / discount.QuantityAmount;
+
+                    var discountTotal = discountApplications * discount.DiscountAmount;
+
+                    return discountTotal;
+                })
+                .Sum();
 
 
             return totalValue - totalDiscount;
