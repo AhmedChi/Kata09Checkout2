@@ -149,5 +149,21 @@ namespace KataCheckoutTests
             //Assert
             Assert.AreEqual(expectedPrice, actualPrice);
         }
+
+        [Test]
+        [TestCase("AAAB", 160)]
+        [TestCase("AAABB", 175)]
+        [TestCase("AAABBD", 190)]
+        [TestCase("DABABA", 190)]
+        public void GivenMixedItemsAddedToCheckout_ThenReturnCorrectDiscountedPriceAsInt(string item, int expectedPrice)
+        {
+            //Act
+            var actualPrice = checkout.Scan(item);
+
+            //Assert
+            Assert.AreEqual(expectedPrice, actualPrice);
+        }
+
+
     }
 }
