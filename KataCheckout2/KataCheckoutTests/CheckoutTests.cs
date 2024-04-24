@@ -64,5 +64,16 @@ namespace KataCheckoutTests
             //Assert
             Assert.AreEqual(expectedPrice, actualPrice);
         }
+
+        [Test]
+        [TestCase("CDBA", 115)]
+        public void GivenFourItemsAddedToCheckout_ThenReturnCorrectPriceAsInt(string item, int expectedPrice)
+        {
+            //Act
+            var actualPrice = checkout.Scan(item);
+
+            //Assert
+            Assert.AreEqual(expectedPrice, actualPrice);
+        }
     }
 }
