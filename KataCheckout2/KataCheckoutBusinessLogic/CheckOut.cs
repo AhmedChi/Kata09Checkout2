@@ -21,9 +21,11 @@
                     {
                         totalPrice += _productDictionary[scannedItem[index]];
 
-                        return totalPrice;
+                        
                     }
                }
+
+                return totalPrice;
             }
 
             return 0;
