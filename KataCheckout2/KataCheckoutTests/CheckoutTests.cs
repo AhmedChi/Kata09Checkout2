@@ -18,8 +18,14 @@ namespace KataCheckoutTests
                 new Item{ SKU = 'D', Price = 15 }
             };
 
+            var discounts = new[]
+            {
+                new Discount{ SKU = 'A', QuantityAmount = 3, DiscountAmount = 20},
+                new Discount{ SKU = 'B', QuantityAmount = 2, DiscountAmount = 15},
+            };
 
-            checkout = new CheckOut(products);
+
+            checkout = new CheckOut(products, discounts);
 
         }
 

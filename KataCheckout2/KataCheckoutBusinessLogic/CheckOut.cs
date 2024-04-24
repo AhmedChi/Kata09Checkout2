@@ -3,12 +3,15 @@
     public class CheckOut : ICheckOut
     {
         private readonly IEnumerable<IItem> _items;
+        private readonly IEnumerable<IDiscount> _discounts;
 
         private char[] scannedItems;
 
-        public CheckOut(IEnumerable<IItem> items)
+        public CheckOut(IEnumerable<IItem> items, IEnumerable<IDiscount> discounts)
         {
             _items = items;
+            _discounts = discounts;
+
             scannedItems = new char[] { };
         }
 
@@ -30,20 +33,19 @@
         public int GetTotalPrice(char[] scannedItems)
         {
             var totalValue = 0;
-            var totaldiscount = 0;
-
-            if (scannedItems.Count(item => item == 'A') == 3) 
-            {
-                totaldiscount = 20;
-            } 
+            var totalDiscount = 0;
+            
 
             totalValue = scannedItems
                         .Select(sku => _items.FirstOrDefault(item => item.SKU == sku))
                         .Sum(product => product.Price);
 
-            
+            totalDiscount = _discounts
+                        .Where(discount => scannedItems.Count(sku => sku == discount.SKU) >= discount.QuantityAmount)
+                        .Sum(discount => discount.DiscountAmount);
 
-            return totalValue - totaldiscount;
+
+            return totalValue - totalDiscount;
         }
     }
 }
