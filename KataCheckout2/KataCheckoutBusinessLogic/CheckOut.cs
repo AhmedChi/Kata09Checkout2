@@ -30,12 +30,20 @@
         public int GetTotalPrice(char[] scannedItems)
         {
             var totalValue = 0;
+            var totaldiscount = 0;
+
+            if (scannedItems.Count(item => item == 'A') == 3) 
+            {
+                totaldiscount = 20;
+            } 
 
             totalValue = scannedItems
                         .Select(sku => _items.FirstOrDefault(item => item.SKU == sku))
                         .Sum(product => product.Price);
 
-            return totalValue;
+            
+
+            return totalValue - totaldiscount;
         }
     }
 }
