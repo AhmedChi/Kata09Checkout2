@@ -4,6 +4,6 @@
     {
         int Scan(string scannedItem);
 
-        int GetTotalPrice(char[] scannedItems);
+        int GetTotalPrice(List<char> scannedItems);
     }
 }

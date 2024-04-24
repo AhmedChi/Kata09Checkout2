@@ -43,6 +43,19 @@ namespace KataCheckoutTests
         }
 
         [Test]
+        public void GivenNonExistingItemsAddedToCheckout_ThenReturnError()
+        {
+            //Arrange
+            var expectedPrice = 0;
+
+            //Act
+            var actualPrice = checkout.Scan("X");
+
+            //Assert
+            Assert.AreEqual(expectedPrice, actualPrice);
+        }
+
+        [Test]
         [TestCase("A", 50)]
         [TestCase("B", 30)]
         [TestCase("C", 20)]
@@ -164,6 +177,26 @@ namespace KataCheckoutTests
             Assert.AreEqual(expectedPrice, actualPrice);
         }
 
+        [Test]
+        public void TestIncremental()
+        {
+            var actualPrice = checkout.Scan("");
+            Assert.AreEqual(0, actualPrice);
 
+            actualPrice = checkout.Scan("A");
+            Assert.AreEqual(50, actualPrice);
+
+            actualPrice = checkout.Scan("B");
+            Assert.AreEqual(80, actualPrice);
+
+            actualPrice = checkout.Scan("A");
+            Assert.AreEqual(130, actualPrice);
+
+            actualPrice = checkout.Scan("A");
+            Assert.AreEqual(160, actualPrice);
+
+            actualPrice = checkout.Scan("B");
+            Assert.AreEqual(175, actualPrice);
+        }
     }
 }

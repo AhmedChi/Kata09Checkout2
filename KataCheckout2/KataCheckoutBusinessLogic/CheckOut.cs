@@ -5,34 +5,37 @@
         private readonly IEnumerable<IItem> _items;
         private readonly IEnumerable<IDiscount> _discounts;
 
-        private char[] scannedItems;
+        private List<char> scannedItems;
 
         public CheckOut(IEnumerable<IItem> items, IEnumerable<IDiscount> discounts)
         {
             _items = items;
             _discounts = discounts;
 
-            scannedItems = new char[] { };
+            scannedItems = new List<char> { };
         }
 
         public int Scan(string scannedItem)
-        {
+        {            
             if (!String.IsNullOrEmpty(scannedItem))
             {
-                scannedItems = scannedItem
-                    .ToCharArray()
-                    .Where(sKU => _items.Any(item => item.SKU == sKU))
-                    .ToArray<char>();
+                scannedItems
+                    .AddRange(scannedItem
+                    .Where(sku => _items.Any(item => item.SKU == sku)));
+
+                if (scannedItems.Count == 0)
+                {
+                    return 0;
+                }
 
                 return GetTotalPrice(scannedItems);
             }
 
-            return 0;
+            return 0;                 
         }
 
-        public int GetTotalPrice(char[] scannedItems)
+        public int GetTotalPrice(List<char> scannedItems)
         {
-
             var totalValue = scannedItems
                         .Select(sku => _items.FirstOrDefault(item => item.SKU == sku))
                         .Sum(product => product.Price);
@@ -50,8 +53,8 @@
                 })
                 .Sum();
 
-
             return totalValue - totalDiscount;
         }
+
     }
 }
