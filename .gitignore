@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/KataCheckout2/KataCheckoutTests/bin/Debug/net7.0
+/KataCheckout2/KataCheckoutTests/obj/Debug/net7.0/refint

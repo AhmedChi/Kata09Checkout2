@@ -377,6 +377,16 @@
             "related": ".xml"
           }
         }
+      },
+      "KataCheckoutBusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/KataCheckoutBusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KataCheckoutBusinessLogic.dll": {}
+        }
       }
     }
   },
@@ -969,10 +979,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "KataCheckoutBusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../KataCheckoutBusinessLogic/KataCheckoutBusinessLogic.csproj",
+      "msbuildProject": "../KataCheckoutBusinessLogic/KataCheckoutBusinessLogic.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "KataCheckoutBusinessLogic >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.7.1",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
@@ -1006,7 +1022,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Documents\\Archives\\Work\\src main\\.Net\\Kata\\Kata09Checkout2\\Kata09Checkout2\\KataCheckout2\\KataCheckoutBusinessLogic\\KataCheckoutBusinessLogic.csproj": {
+              "projectPath": "D:\\Documents\\Archives\\Work\\src main\\.Net\\Kata\\Kata09Checkout2\\Kata09Checkout2\\KataCheckout2\\KataCheckoutBusinessLogic\\KataCheckoutBusinessLogic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

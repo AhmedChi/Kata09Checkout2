@@ -1,0 +1,11 @@
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\bin\Debug\net7.0\KataCheckoutBusinessLogic.deps.json
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\bin\Debug\net7.0\KataCheckoutBusinessLogic.dll
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\bin\Debug\net7.0\KataCheckoutBusinessLogic.pdb
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\KataCheckoutBusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\KataCheckoutBusinessLogic.AssemblyInfoInputs.cache
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\KataCheckoutBusinessLogic.AssemblyInfo.cs
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\KataCheckoutBusinessLogic.csproj.CoreCompileInputs.cache
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\KataCheckoutBusinessLogic.dll
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\refint\KataCheckoutBusinessLogic.dll
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\KataCheckoutBusinessLogic.pdb
+D:\Documents\Archives\Work\src main\.Net\Kata\Kata09Checkout2\Kata09Checkout2\KataCheckout2\KataCheckoutBusinessLogic\obj\Debug\net7.0\ref\KataCheckoutBusinessLogic.dll
