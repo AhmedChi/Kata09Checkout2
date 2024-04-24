@@ -97,6 +97,7 @@ namespace KataCheckoutTests
 
         [Test]
         [TestCase("AAA", 130)]
+        [TestCase("BB", 45)]
         public void GivenThreeDuplicateItemsAddedToCheckout_ThenReturnCorrectPriceAsInt(string item, int expectedPrice)
         {
             //Act
