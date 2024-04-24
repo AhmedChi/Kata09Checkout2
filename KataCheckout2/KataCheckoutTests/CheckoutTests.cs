@@ -4,21 +4,22 @@ namespace KataCheckoutTests
 {
     public class CheckoutTests
     {
-        private CheckOut checkout;
+        private ICheckOut checkout;
 
         [SetUp]
         public void Setup()
         {
-            var productsDictionary = new Dictionary<char, int>()
+
+            var products = new[]
             {
-                {'A', 50 },
-                {'B', 30 },
-                {'C', 20 },
-                {'D', 15 }
+                new Item{ SKU = 'A', Price = 50 },
+                new Item{ SKU = 'B', Price = 30 },
+                new Item{ SKU = 'C', Price = 20 },
+                new Item{ SKU = 'D', Price = 15 }
             };
 
 
-            checkout = new CheckOut(productsDictionary);
+            checkout = new CheckOut(products);
 
         }
 

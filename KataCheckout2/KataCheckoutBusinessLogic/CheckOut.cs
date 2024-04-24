@@ -1,34 +1,41 @@
 ﻿namespace KataCheckoutBusinessLogic
 {
-    public class CheckOut
+    public class CheckOut : ICheckOut
     {
-        private Dictionary<char, int> _productDictionary;
+        private readonly IEnumerable<IItem> _items;
 
-        public CheckOut(Dictionary<char, int> productDictionary)
+        private char[] scannedItems;
+
+        public CheckOut(IEnumerable<IItem> items)
         {
-            _productDictionary = productDictionary;
+            _items = items;
+            scannedItems = new char[] { };
         }
 
         public int Scan(string scannedItem)
         {
-            var totalPrice = 0;
-
             if (!String.IsNullOrEmpty(scannedItem))
             {
-               for (int index = 0; index < scannedItem.Length; index++)
-               {
-                    if (_productDictionary.ContainsKey(scannedItem[index]))
-                    {
-                        totalPrice += _productDictionary[scannedItem[index]];
+                scannedItems = scannedItem
+                    .ToCharArray()
+                    .Where(sKU => _items.Any(item => item.SKU == sKU))
+                    .ToArray<char>();
 
-                        
-                    }
-               }
-
-                return totalPrice;
+                return GetTotalPrice(scannedItems);
             }
 
             return 0;
+        }
+
+        public int GetTotalPrice(char[] scannedItems)
+        {
+            var totalValue = 0;
+
+            totalValue = scannedItems
+                        .Select(sku => _items.FirstOrDefault(item => item.SKU == sku))
+                        .Sum(product => product.Price);
+
+            return totalValue;
         }
     }
 }
